@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OVINSBO: Professional Sportswear Manufacturer | Guangzhou Xingyi</title>
+  <meta name="description" content="OVINSBO, a professional sportswear manufacturer, has the experience, techniques, and technology to bring your visions to life. It's a sportswear manufacturer you can trust.">
+  <link rel="icon" href="images/general/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#ffffff;--bg-alt:#F0F2F5;--text:#0B1C32;--text-sec:#4F4F55;
+      --accent:#FF3705;--accent-h:#cc2c00;--accent-l:#fff0ec;
+      --border:#D6DAE0;--card-shadow:0 4px 20px rgba(0,0,0,.08);
+      --card-hover:0 12px 40px rgba(0,0,0,.12);--radius:12px;--radius-sm:8px;
+      --container:1232px;--font:'Inter','Noto Sans SC',-apple-system,sans-serif;
+    }
+    html{scroll-behavior:smooth}
+    body{
+      font-family:var(--font);color:var(--text);background:var(--bg);
+      line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--container);margin:0 auto;padding:0 24px}
+
+    /* ── Language Toggle ── */
+    .lang-zh,.lang-en{transition:opacity .15s}
+    body.show-en .lang-zh{display:none!important}
+    body.show-zh .lang-en{display:none!important}
+
+    /* ── Nav ── */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      background:rgba(255,255,255,.97);backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--border);transition:box-shadow .3s
+    }
+    nav.scrolled{box-shadow:0 2px 12px rgba(0,0,0,.06)}
+    nav .container{
+      display:flex;align-items:center;justify-content:space-between;height:72px
+    }
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.2rem}
+    .logo img{height:32px;width:auto}
+    .logo span{color:var(--accent)}
+    .nav-links{display:flex;align-items:center;gap:24px}
+    .nav-links a{
+      font-size:.9rem;font-weight:500;color:var(--text-sec);
+      transition:color .2s
+    }
+    .nav-links a:hover{color:var(--text)}
+    .nav-cta{
+      background:var(--text);color:#fff!important;
+      padding:10px 24px;border-radius:999px;font-weight:600!important;
+      font-size:.85rem!important;letter-spacing:.5px
+    }
+    .nav-cta:hover{background:#1a1a1a!important}
+    .lang-btn{
+      background:none;border:1.5px solid var(--border);border-radius:6px;
+      padding:4px 10px;font-size:.78rem;font-weight:600;cursor:pointer;
+      color:var(--text-sec);transition:.2s;font-family:inherit
+    }
+    .lang-btn:hover{border-color:var(--text);color:var(--text)}
+    .hamburger{
+      display:none;flex-direction:column;gap:5px;cursor:pointer;
+      background:none;border:none;padding:4px
+    }
+    .hamburger span{width:22px;height:2px;background:var(--text);border-radius:2px;transition:.3s}
+
+    /* ── Hero ── */
+    .hero{
+      min-height:100vh;display:flex;align-items:center;
+      background:linear-gradient(135deg,#0a0a23 0%,#1a1a3e 40%,#2a0a1a 100%);
+      overflow:hidden;padding-top:72px;position:relative
+    }
+    .hero-overlay{
+      position:absolute;inset:0;
+      background:radial-gradient(ellipse 600px 400px at 70% 30%,rgba(255,55,5,.1) 0%,transparent 60%),
+                 radial-gradient(ellipse 400px 600px at 20% 80%,rgba(255,55,5,.06) 0%,transparent 60%);
+      pointer-events:none
+    }
+    .hero .container{position:relative;z-index:2;width:100%}
+    .hero-content{max-width:720px}
+    .hero h1{
+      font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;line-height:1.1;
+      color:#fff;letter-spacing:-1.5px;margin-bottom:16px
+    }
+    .hero h1 span{color:var(--accent)}
+    .hero p{
+      font-size:1.1rem;color:rgba(255,255,255,.6);
+      max-width:540px;margin-bottom:32px;line-height:1.7
+    }
+    .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:14px 32px;border-radius:999px;
+      font-weight:600;font-size:.9rem;font-family:inherit;
+      transition:all .25s;cursor:pointer;border:none
+    }
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-primary:hover{background:var(--accent-h);transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,55,5,.3)}
+    .btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.25)}
+    .btn-outline:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.05);transform:translateY(-2px)}
+    .btn-dark{background:var(--text);color:#fff}
+    .btn-dark:hover{background:#1a1a1a;transform:translateY(-2px);box-shadow:0 8px 24px rgba(11,28,50,.2)}
+    .hero-stats{
+      display:flex;gap:48px;margin-top:48px;
+      padding-top:28px;border-top:1px solid rgba(255,255,255,.08)
+    }
+    .hero-stat h3{font-size:2rem;font-weight:800;color:#fff;line-height:1}
+    .hero-stat h3 span{color:var(--accent)}
+    .hero-stat p{font-size:.82rem;color:rgba(255,255,255,.45);margin-bottom:0}
+
+    /* ── Sections Common ── */
+    section{padding:120px 0}
+    .section-title{
+      font-size:clamp(1.6rem,3.2vw,2.6rem);font-weight:700;
+      letter-spacing:-.3px;margin-bottom:12px
+    }
+    .section-sub{font-size:1rem;color:var(--text-sec);font-weight:300;line-height:1.7;max-width:560px}
+    .section-header{margin-bottom:48px}
+    .section-header.center{text-align:center}
+    .section-header.center .section-sub{margin:0 auto}
+
+    /* ── Products ── */
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+      gap:20px
+    }
+    .product-card{
+      position:relative;overflow:hidden;border-radius:var(--radius-sm);
+      cursor:pointer;background:var(--bg);border:1px solid var(--border);
+      transition:all .3s
+    }
+    .product-card:hover{box-shadow:var(--card-hover);transform:translateY(-4px)}
+    .product-card img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+    .product-overlay{
+      position:absolute;bottom:0;left:0;right:0;
+      background:rgba(255,255,255,.85);backdrop-filter:blur(8px);
+      padding:14px 18px;transform:translateY(70px);
+      transition:transform .4s ease
+    }
+    .product-card:hover .product-overlay{transform:translateY(0)}
+    .product-overlay h3{font-size:1rem;font-weight:600;margin-bottom:4px}
+    .product-overlay p{font-size:.8rem;color:var(--text-sec);font-weight:300;line-height:1.4}
+    .product-placeholder{
+      width:100%;aspect-ratio:1/1;
+      display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;
+      background:#f5f5f5;color:var(--text-sec);font-size:.85rem
+    }
+    .product-placeholder .icon{font-size:2.5rem}
+
+    /* ── Feature Cards ── */
+    .features-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+    .feature-card{text-align:center}
+    .feature-card img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius-sm);margin-bottom:16px}
+    .feature-img-placeholder{
+      width:100%;aspect-ratio:3/4;border-radius:var(--radius-sm);
+      background:#f0f2f5;display:flex;align-items:center;justify-content:center;
+      font-size:3rem;margin-bottom:16px
+    }
+    .feature-card h3{font-size:1.1rem;font-weight:600;margin-bottom:8px}
+    .feature-card p{font-size:.88rem;color:var(--text-sec);font-weight:300;line-height:1.5;max-width:300px;margin:0 auto}
+
+    /* ── Process Steps ── */
+    .process-section{background:var(--bg-alt)}
+    .process-content{display:flex;gap:80px;align-items:flex-start}
+    .process-left{flex:0 0 400px}
+    .process-left h2{font-size:clamp(1.4rem,2.5vw,2rem);font-weight:600;line-height:1.3;margin-bottom:24px}
+    .process-list{list-style:none;flex:1}
+    .process-list li{
+      display:flex;gap:20px;padding:20px 0;
+      border-bottom:1px solid var(--border);position:relative
+    }
+    .process-list li:first-child{padding-top:0}
+    .process-list li::before{
+      content:'';position:absolute;left:10px;top:28px;bottom:0;width:1px;
+      background:var(--border)
+    }
+    .process-list li:last-child::before{display:none}
+    .process-num{
+      width:20px;flex-shrink:0;font-weight:300;font-size:1rem;
+      color:var(--accent);padding-top:2px;position:relative;z-index:1
+    }
+    .process-text h4{font-size:1rem;font-weight:600;margin-bottom:4px}
+    .process-text p{font-size:.85rem;color:var(--text-sec);font-weight:300;line-height:1.5}
+    .process-slider{flex:0 0 440px;border-radius:var(--radius-sm);overflow:hidden}
+    .process-slider img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius-sm)}
+
+    /* ── Steps Cards ── */
+    .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+    .step-card{
+      background:var(--bg-alt);border-radius:var(--radius);
+      padding:28px;position:relative;transition:all .3s
+    }
+    .step-card:hover{background:#e8eaed}
+    .step-card .num{
+      width:36px;height:36px;border-radius:50%;
+      border:1px solid var(--border);display:flex;align-items:center;
+      justify-content:center;font-weight:300;margin-bottom:12px
+    }
+    .step-card h3{font-size:1rem;font-weight:600;margin-bottom:8px}
+    .step-card p{font-size:.85rem;color:var(--text-sec);font-weight:300;line-height:1.5}
+    .step-card .accent-dot{
+      width:4px;height:28px;background:var(--accent);border-radius:4px;
+      position:absolute;left:-2px;top:28px
+    }
+
+    /* ── FAQ ── */
+    .faq-list{max-width:800px;margin:0 auto}
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-q{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:24px 0;cursor:pointer;font-size:1rem;font-weight:500;
+      transition:color .2s
+    }
+    .faq-q:hover{color:var(--accent)}
+    .faq-q svg{transition:transform .3s;flex-shrink:0}
+    .faq-item.open .faq-q svg{transform:rotate(45deg)}
+    .faq-a{
+      max-height:0;overflow:hidden;transition:max-height .3s,padding .3s;
+      font-size:.88rem;color:var(--text-sec);font-weight:300;line-height:1.7
+    }
+    .faq-item.open .faq-a{max-height:300px;padding-bottom:24px}
+    .faq-header{padding-bottom:40px;border-bottom:1px solid var(--border);text-align:center}
+
+    /* ── Contact Form ── */
+    .contact-section{background:var(--bg-alt);padding-bottom:80px}
+    .contact-form-wrap{
+      max-width:1000px;margin:-100px auto 0;
+      background:#fff;border-radius:var(--radius);
+      padding:60px 80px;box-shadow:var(--card-shadow);position:relative;z-index:2
+    }
+    .contact-form-wrap h2{font-size:clamp(1.4rem,2.5vw,2rem);font-weight:600;margin-bottom:8px}
+    .contact-form-wrap p{font-size:.9rem;color:var(--text-sec);margin-bottom:32px}
+    .contact-form-wrap p a{color:#266FE8}
+    .contact-form{display:flex;flex-direction:column;gap:16px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .contact-form input,.contact-form textarea,.contact-form select{
+      padding:14px 16px;border:1.5px solid var(--border);
+      border-radius:var(--radius-sm);font-family:inherit;font-size:.9rem;
+      transition:border .2s;outline:none;background:#f6f7f8;width:100%
+    }
+    .contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--accent)}
+    .contact-form textarea{min-height:120px;resize:vertical}
+    .select-box{
+      background:#f6f7f8;border:1.5px solid var(--border);
+      border-radius:var(--radius-sm);padding:14px 16px;
+      cursor:pointer;font-size:.9rem;color:var(--text-sec);
+      transition:border .2s;display:flex;justify-content:space-between;align-items:center
+    }
+    .select-box:hover{border-color:var(--accent)}
+    .file-upload{
+      background:#f6f7f8;border:1.5px dashed var(--border);
+      border-radius:var(--radius-sm);padding:20px;text-align:center;
+      cursor:pointer;transition:border .2s
+    }
+    .file-upload:hover{border-color:var(--accent)}
+    .file-upload p{font-size:.85rem;color:var(--text-sec);margin-bottom:4px!important}
+    .file-upload small{font-size:.78rem;color:#94a3b8;display:block}
+    .contact-image{
+      width:100%;height:400px;object-fit:cover;
+      position:relative;z-index:1
+    }
+    .contact-img-placeholder{
+      width:100%;height:400px;background:#1a1a3e;
+      display:flex;align-items:center;justify-content:center;
+      color:rgba(255,255,255,.3);font-size:1rem
+    }
+
+    /* ── Footer ── */
+    footer{background:var(--bg-alt);border-top:1px solid var(--border);padding:24px 0}
+    footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+    footer p{font-size:.82rem;color:var(--text-sec)}
+    .footer-socials{display:flex;gap:12px}
+    .footer-socials a{
+      width:32px;height:32px;border-radius:50%;background:var(--text);
+      display:flex;align-items:center;justify-content:center;
+      color:#fff;transition:.2s;font-size:.8rem
+    }
+    .footer-socials a:hover{background:var(--accent)}
+    .whatsapp-float{
+      position:fixed;bottom:24px;right:24px;z-index:999;
+      width:56px;height:56px;border-radius:50%;
+      background:#25D366;color:#fff;
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.5rem;box-shadow:0 4px 16px rgba(37,211,102,.3);
+      transition:.3s;cursor:pointer
+    }
+    .whatsapp-float:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(37,211,102,.4)}
+
+    /* ── Split Section ── */
+    .split-section{display:flex;align-items:center;gap:60px;padding:0}
+    .split-text{flex:1;padding:80px 0}
+    .split-text h2{font-size:clamp(1.4rem,2.5vw,2rem);font-weight:600;line-height:1.3}
+    .split-text p{font-size:.95rem;color:var(--text-sec);font-weight:300;line-height:1.7;margin-top:16px}
+    .split-image{flex:0 0 600px;border-radius:var(--radius);overflow:hidden}
+    .split-image img{width:100%;height:auto;display:block}
+    .split-image-placeholder{
+      width:600px;height:400px;background:#f0f2f5;border-radius:var(--radius);
+      display:flex;align-items:center;justify-content:center;font-size:3rem
+    }
+
+    /* ── Responsive ── */
+    @media(max-width:968px){
+      .nav-links{
+        display:none;position:fixed;top:72px;left:0;right:0;
+        background:#fff;flex-direction:column;padding:24px;
+        gap:16px;border-bottom:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,.08)
+      }
+      .nav-links.open{display:flex}
+      .hamburger{display:flex}
+      .features-grid,.steps-grid{grid-template-columns:1fr 1fr}
+      .process-content{flex-direction:column;gap:32px}
+      .process-left,.process-slider{flex:auto;width:100%}
+      .form-row{grid-template-columns:1fr}
+      .contact-form-wrap{padding:32px 24px;margin:-60px 16px 0}
+      .split-section{flex-direction:column;gap:32px}
+      .split-image{flex:auto;width:100%}
+      .hero-stats{gap:24px;flex-wrap:wrap}
+      .hero-stat{flex:1 1 40%}
+    }
+    @media(max-width:640px){
+      .features-grid,.steps-grid,.product-grid{grid-template-columns:1fr 1fr}
+      .hero-actions{flex-direction:column}
+      .hero-actions .btn{width:100%;justify-content:center}
+      section{padding:60px 0}
+      .hero h1{font-size:1.8rem}
+      .contact-form-wrap{padding:24px 16px}
+    }
+    @media(max-width:480px){
+      .features-grid,.steps-grid,.product-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body class="show-en">
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <div class="container">
+    <a href="#home" class="logo" onclick="goHome()">
+      <img src="images/general/logo.png" alt="OVINSBO">
+      <span>OVINSBO</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#home" onclick="goHome()"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
+      <a href="#about" onclick="scrollTo('about')"><span class="lang-en">About Us</span><span class="lang-zh">关于我们</span></a>
+      <a href="#contact" class="nav-cta" onclick="scrollTo('contact')">
+        <span class="lang-en">INQUIRE NOW</span><span class="lang-zh">立即咨询</span>
+      </a>
+      <button class="lang-btn" onclick="toggleLang()" id="langToggle">中文</button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="home">
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="lang-en">
+        <span>Lead</span> Custom Sportswear<br>
+        <span>Manufacturer</span>
+      </h1>
+      <h1 class="lang-zh">
+        <span>领先</span>的运动服装<br>
+        <span>定制制造商</span>
+      </h1>
+      <p class="lang-en">Build your sportswear brand with a custom manufacturer you can trust. OVINSBO brings 8 years of expertise to bring your vision to life.</p>
+      <p class="lang-zh">与值得信赖的定制制造商一起打造您的运动服装品牌。OVINSBO 用 8 年专业经验将您的愿景变为现实。</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary" onclick="scrollTo('contact')">
+          <span class="lang-en">INQUIRE NOW</span><span class="lang-zh">立即咨询</span>
+        </a>
+        <a href="#products" class="btn btn-outline" onclick="scrollTo('products')">
+          <span class="lang-en">View Products</span><span class="lang-zh">查看产品</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INTRO ═══ -->
+<section id="about">
+  <div class="container">
+    <div class="section-header center">
+      <h2 class="section-title lang-en">Meet OVINSBO, the Leading Custom<br>Sportswear Manufacturer</h2>
+      <h2 class="section-title lang-zh">认识 OVINSBO，领先的<br>定制运动服装制造商</h2>
+      <p class="section-sub lang-en" style="max-width:720px">Create your complete sportswear collection with OVINSBO (Guangzhou Xingyi Sportswear), the top sportswear manufacturer that boasts a wide range of performance apparel.</p>
+      <p class="section-sub lang-zh" style="max-width:720px">与广州星亿运动服饰（OVINSBO）一起打造您的完整运动服装系列——品类齐全的高性能运动装备制造商。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRODUCTS ═══ -->
+<section style="background:var(--bg-alt);padding-top:60px;padding-bottom:80px" id="products">
+  <div class="container">
+    <div class="section-header center">
+      <h2 class="section-title lang-en">All Your Sportswear Needs Covered</h2>
+      <h2 class="section-title lang-zh">满足您的全部运动服需求</h2>
+      <p class="section-sub lang-en">From yoga wear to team sports — premium sportswear for every discipline</p>
+      <p class="section-sub lang-zh">从瑜伽服到团队运动装备——为每个运动品类打造精品</p>
+    </div>
+    <div class="product-grid" id="productGrid">
+      <!-- Products injected by JS -->
+    </div>
+    <div style="text-align:center;margin-top:36px">
+      <a href="#contact" class="btn btn-dark" onclick="scrollTo('contact')">
+        <span class="lang-en">INQUIRE NOW</span><span class="lang-zh">立即咨询</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CO-CREATE ═══ -->
+<section style="padding:60px 0 0">
+  <div class="container">
+    <div class="split-section">
+      <div class="split-text">
+        <h2 class="lang-en">Co-Create Unique Apparel<br>With Us</h2>
+        <h2 class="lang-zh">与我们共同创造<br>独特的运动服饰</h2>
+        <p class="lang-en">All our sportswear range is fully customizable and available in a range of fabrics, designs, and sizes. We can provide all apparel as white labeled (without our brand) or private labeled (using your brand label).</p>
+        <p class="lang-zh">我们所有的运动服系列均可完全定制，提供多种面料、设计和尺码。所有服装可以白标（无品牌标识）或自有品牌（使用您的品牌标签）交付。</p>
+        <div style="margin-top:32px">
+          <a href="#contact" class="btn btn-dark" onclick="scrollTo('contact')">
+            <span class="lang-en">INQUIRE NOW</span><span class="lang-zh">立即咨询</span>
+          </a>
+        </div>
+      </div>
+      <div class="split-image">
+        <img src="images/general/hero-bg.jpg" alt="Co-Create" onerror="this.parentElement.innerHTML='<div class=split-image-placeholder>👕</div>'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SUSTAINABLE ═══ -->
+<section style="padding:60px 0 80px">
+  <div class="container">
+    <div class="split-section" style="flex-direction:row-reverse">
+      <div class="split-text">
+        <h2 class="lang-en">Your Sustainable<br>Fashion Partner</h2>
+        <h2 class="lang-zh">您的可持续<br>时尚合作伙伴</h2>
+        <p class="lang-en">We know you and your customers are serious about sustainability, and so are we. OVINSBO is committed to sustainable sportswear manufacturing. We're working hard to eliminate waste in the supply chain and use ethically sourced and sustainable materials.</p>
+        <p class="lang-zh">我们深知您和您的客户对可持续发展的重视，我们也一样。OVINSBO 致力于可持续运动服装制造，努力消除供应链中的浪费，使用符合道德采购的可持续材料。</p>
+      </div>
+      <div class="split-image">
+        <img src="images/general/about-bg.jpg" alt="Sustainable Fashion" onerror="this.parentElement.innerHTML='<div class=split-image-placeholder>🌱</div>'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY US ═══ -->
+<section style="background:var(--bg-alt);padding:80px 0">
+  <div class="container">
+    <div class="section-header center">
+      <h2 class="section-title lang-en">Why Work with OVINSBO?</h2>
+      <h2 class="section-title lang-zh">为什么选择 OVINSBO？</h2>
+      <p class="section-sub lang-en">OVINSBO is one of the best custom sportswear manufacturers you can work with.</p>
+      <p class="section-sub lang-zh">OVINSBO 是您可以信赖的最佳定制运动服装制造商之一。</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-img-placeholder">⚡</div>
+        <h3 class="lang-en">Fast Turnaround Time</h3>
+        <h3 class="lang-zh">快速交期</h3>
+        <p class="lang-en">We can deliver your finished products within 7-20 working days. In urgent cases, we can deliver within 3 days.</p>
+        <p class="lang-zh">成品交付通常 7-20 个工作日。紧急情况下可在 3 天内完成。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-img-placeholder">📦</div>
+        <h3 class="lang-en">Low MOQs</h3>
+        <h3 class="lang-zh">低起订量</h3>
+        <p class="lang-en">Our low MOQ policy enables you to kickstart your brand with minimum investment. Just re-order when you're ready.</p>
+        <p class="lang-zh">我们的低起订量政策让您以最小投入启动品牌，准备好后随时返单。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-img-placeholder">🤝</div>
+        <h3 class="lang-en">Professional Support</h3>
+        <h3 class="lang-zh">专业支持</h3>
+        <p class="lang-en">Whether you need guidance selecting the perfect garment or advice on the best technique, our experts are on hand.</p>
+        <p class="lang-zh">无论您需要选择合适产品的建议还是最佳工艺的指导，我们的专家随时待命。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-img-placeholder">🔧</div>
+        <h3 class="lang-en">Outstanding Technology</h3>
+        <h3 class="lang-zh">卓越工艺</h3>
+        <p class="lang-en">We can handle a variety of techniques including screen printing, sublimation, embroidery, and custom dyeing.</p>
+        <p class="lang-zh">我们掌握多种工艺技术，包括丝印、热升华、刺绣和定制染色。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MANUFACTURING PROCESS ═══ -->
+<section class="process-section" style="padding:80px 0">
+  <div class="container">
+    <div class="process-content">
+      <div class="process-left">
+        <h2 class="lang-en">Our Sportswear<br>Manufacturing Process</h2>
+        <h2 class="lang-zh">我们的运动服饰<br>制造流程</h2>
+        <div style="margin-top:32px;border-radius:var(--radius-sm);overflow:hidden">
+          <div class="process-slider-placeholder" style="width:100%;height:260px;background:linear-gradient(135deg,#1a1a3e,#2a0a1a);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.3);font-size:3rem">🏭</div>
+        </div>
+      </div>
+      <ul class="process-list">
+        <li><span class="process-num">01</span><div class="process-text"><h4 class="lang-en">Dyeing</h4><h4 class="lang-zh">染色</h4><p class="lang-en">We add planet-friendly dyes to premium fabrics</p><p class="lang-zh">我们为优质面料使用环保染料</p></div></li>
+        <li><span class="process-num">02</span><div class="process-text"><h4 class="lang-en">Cutting</h4><h4 class="lang-zh">裁剪</h4><p class="lang-en">Our apparel is cut to precision templates for consistent fit</p><p class="lang-zh">我们的服装按照精确模板裁剪，确保合身一致性</p></div></li>
+        <li><span class="process-num">03</span><div class="process-text"><h4 class="lang-en">Sewing</h4><h4 class="lang-zh">缝制</h4><p class="lang-en">Every seam is expertly sewed and finished for quality and durability</p><p class="lang-zh">每道缝线都经过专业缝合处理，确保品质和耐用性</p></div></li>
+        <li><span class="process-num">04</span><div class="process-text"><h4 class="lang-en">Checking</h4><h4 class="lang-zh">质检</h4><p class="lang-en">We check every piece of apparel to ensure total quality</p><p class="lang-zh">我们检查每一件服装，确保全面品质</p></div></li>
+        <li><span class="process-num">05</span><div class="process-text"><h4 class="lang-en">Finishing</h4><h4 class="lang-zh">整烫</h4><p class="lang-en">Custom apparel is flawlessly finished — ironed and pressed to perfection</p><p class="lang-zh">定制服装的完美收尾——熨烫定型一丝不苟</p></div></li>
+        <li><span class="process-num">06</span><div class="process-text"><h4 class="lang-en">Packaging</h4><h4 class="lang-zh">包装</h4><p class="lang-en">Finished garments are packed sustainably before being shipped</p><p class="lang-zh">成品服装以环保方式包装后发货</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section style="padding:80px 0">
+  <div class="container">
+    <div class="section-header center">
+      <h2 class="section-title lang-en">How Does OVINSBO Work?</h2>
+      <h2 class="section-title lang-zh">OVINSBO 的合作流程</h2>
+      <p class="section-sub lang-en">We have a simple process to transform your designs into finished products ready to sell.</p>
+      <p class="section-sub lang-zh">我们有一个简单的流程，将您的设计转化为可以销售的成品。</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card"><div class="accent-dot"></div><div class="num">1</div><h3 class="lang-en">Tell us what you need</h3><h3 class="lang-zh">告诉我们您的需求</h3><p class="lang-en">Share specifications, including materials, designs, garments, and colors.</p><p class="lang-zh">分享规格参数，包括面料、设计、款式和颜色。</p></div>
+      <div class="step-card"><div class="num">2</div><h3 class="lang-en">Receive your custom quote</h3><h3 class="lang-zh">获取您的定制报价</h3><p class="lang-en">We'll ask questions to understand your requirements. You'll receive your custom quote.</p><p class="lang-zh">我们会提出问题以全面了解您的需求，然后给您定制报价。</p></div>
+      <div class="step-card"><div class="num">3</div><h3 class="lang-en">Pay your deposit</h3><h3 class="lang-zh">支付定金</h3><p class="lang-en">Once you've agreed to the cost, pay your deposit and we'll get to work!</p><p class="lang-zh">确认费用后支付定金，我们就开始工作！</p></div>
+      <div class="step-card"><div class="num">4</div><h3 class="lang-en">Review your prototype</h3><h3 class="lang-zh">确认样品</h3><p class="lang-en">Check your prototype to ensure it's 100% perfect. Make final tweaks as needed.</p><p class="lang-zh">检查样品确保 100% 完美，根据需要做最后调整。</p></div>
+      <div class="step-card"><div class="num">5</div><h3 class="lang-en">We get to work</h3><h3 class="lang-zh">批量生产</h3><p class="lang-en">We'll manufacture your garments and keep you informed of shipping timelines.</p><p class="lang-zh">我们将生产您的服装，并随时告知您发货进度。</p></div>
+      <div class="step-card"><div class="num">6</div><h3 class="lang-en">Take delivery</h3><h3 class="lang-zh">收货</h3><p class="lang-en">Your finished custom garments will be delivered within 7-20 days.</p><p class="lang-zh">您的定制成品服装将在 7-20 天内交付。</p></div>
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="#contact" class="btn btn-dark" onclick="scrollTo('contact')">
+        <span class="lang-en">INQUIRE NOW</span><span class="lang-zh">立即咨询</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section style="background:var(--bg-alt);padding:80px 0">
+  <div class="container">
+    <div class="faq-header">
+      <h2 class="section-title" style="font-size:clamp(1.4rem,2.5vw,2rem);font-weight:600">FAQs</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="lang-en">1. How to find a sportswear manufacturer?</span>
+          <span class="lang-zh">1. 如何找到运动服制造商？</span>
+          <svg width="20" height="20" viewBox="0 0 28 28" fill="none"><path stroke="currentColor" stroke-width="1.75" d="M21 14H7M14 21V7"/></svg>
+        </div>
+        <div class="faq-a lang-en">Choosing a sportswear manufacturer is tough. They should understand your vision and have the experience, techniques, and technologies to bring it to life. OVINSBO is a sportswear manufacturer you can rely on.</div>
+        <div class="faq-a lang-zh">选择运动服制造商并不容易。他们应该理解您的愿景，并拥有将其实现的工艺、经验和技术。OVINSBO 是您可以信赖的运动服制造商。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="lang-en">2. What makes OVINSBO the best sportswear manufacturer?</span>
+          <span class="lang-zh">2. 为什么 OVINSBO 是最好的运动服制造商？</span>
+          <svg width="20" height="20" viewBox="0 0 28 28" fill="none"><path stroke="currentColor" stroke-width="1.75" d="M21 14H7M14 21V7"/></svg>
+        </div>
+        <div class="faq-a lang-en">At OVINSBO, we aim to work with you as a partner, keeping you in control at every stage. You will get perfectly manufactured sportswear that you — and your customers — will love.</div>
+        <div class="faq-a lang-zh">在 OVINSBO，我们致力于与您建立合作伙伴关系，让您在每个阶段都掌握主动权。您将获得您和您的客户都会喜欢的完美制造的运动服装。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="lang-en">3. What sustainable materials does OVINSBO use?</span>
+          <span class="lang-zh">3. OVINSBO 使用哪些可持续材料？</span>
+          <svg width="20" height="20" viewBox="0 0 28 28" fill="none"><path stroke="currentColor" stroke-width="1.75" d="M21 14H7M14 21V7"/></svg>
+        </div>
+        <div class="faq-a lang-en">Yes! We use various organic and environmentally-friendly materials, including organic cotton, recycled polyester (rPET), hemp, and more.</div>
+        <div class="faq-a lang-zh">是的！我们使用各种有机和环保材料，包括有机棉、再生涤纶（rPET）、亚麻等。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="lang-en">4. How long does it take to receive my order?</span>
+          <span class="lang-zh">4. 下单后多久能收到？</span>
+          <svg width="20" height="20" viewBox="0 0 28 28" fill="none"><path stroke="currentColor" stroke-width="1.75" d="M21 14H7M14 21V7"/></svg>
+        </div>
+        <div class="faq-a lang-en">Typically, it takes 7-20 days to receive your order. Rush orders can be delivered within 3-7 days.</div>
+        <div class="faq-a lang-zh">通常需要 7-20 天。急单可在 3-7 天内交付。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="lang-en">5. What is your MOQ?</span>
+          <span class="lang-zh">5. 你们的最低起订量是多少？</span>
+          <svg width="20" height="20" viewBox="0 0 28 28" fill="none"><path stroke="currentColor" stroke-width="1.75" d="M21 14H7M14 21V7"/></svg>
+        </div>
+        <div class="faq-a lang-en">Our standard MOQ is 100 pieces per style per color. For existing designs with stock fabric, we can offer as low as 50 pieces.</div>
+        <div class="faq-a lang-zh">标准 MOQ 为 100 件/款/色。对于有库存面料的现有设计，最低可至 50 件。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="lang-en">6. Can I get wholesale pricing?</span>
+          <span class="lang-zh">6. 可以拿到批发价格吗？</span>
+          <svg width="20" height="20" viewBox="0 0 28 28" fill="none"><path stroke="currentColor" stroke-width="1.75" d="M21 14H7M14 21V7"/></svg>
+        </div>
+        <div class="faq-a lang-en">We offer wholesale pricing to customers placing large orders for customized sportswear. Contact us for a no-obligation discussion of your requirements.</div>
+        <div class="faq-a lang-zh">我们为定制运动服的大订单客户提供批发价格。联系我们进行免费的需求讨论。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section class="contact-section" id="contact">
+  <div class="contact-img-placeholder" id="contactImg">
+    <div style="text-align:center">
+      <div style="font-size:3rem;margin-bottom:8px">✉️</div>
+      <p class="lang-en" style="color:rgba(255,255,255,.5);font-size:.9rem">📸 Banner image — upload your factory/banner photo here</p>
+      <p class="lang-zh" style="color:rgba(255,255,255,.5);font-size:.9rem">📸 横幅图片——在此上传您的工厂/横幅照片</p>
+    </div>
+  </div>
+  <div class="container" style="position:relative">
+    <div class="contact-form-wrap">
+      <h2 class="lang-en">Ready to Start?</h2>
+      <h2 class="lang-zh">准备好开始了吗？</h2>
+      <p class="lang-en">Fill out the form below or email us at <a href="mailto:info@ovinsbo.com">info@ovinsbo.com</a></p>
+      <p class="lang-zh">填写以下表单或发送邮件至 <a href="mailto:info@ovinsbo.com">info@ovinsbo.com</a></p>
+      <form class="contact-form" onsubmit="event.preventDefault();alert(currentLang==='en'?'Thank you! We will respond within 24 hours.':'感谢您的咨询！我们将在24小时内回复。')">
+        <div class="form-row">
+          <input type="text" placeholder="First Name*" class="lang-en" required>
+          <input type="text" placeholder="名 *" class="lang-zh" required>
+          <input type="text" placeholder="Last Name*" class="lang-en" required>
+          <input type="text" placeholder="姓 *" class="lang-zh" required>
+        </div>
+        <input type="email" placeholder="Email*" class="lang-en" required>
+        <input type="email" placeholder="邮箱 *" class="lang-zh" required>
+        <div class="select-box">
+          <span class="lang-en">Your Target Market *</span>
+          <span class="lang-zh">您的目标市场 *</span>
+          <span>▼</span>
+        </div>
+        <div class="select-box">
+          <span class="lang-en">Category You Wish To Receive A Quote *</span>
+          <span class="lang-zh">希望获取报价的品类 *</span>
+          <span>▼</span>
+        </div>
+        <div class="select-box">
+          <span class="lang-en">Order Quantity *</span>
+          <span class="lang-zh">订单数量 *</span>
+          <span>▼</span>
+        </div>
+        <textarea placeholder="Enter Your Message*" class="lang-en" required></textarea>
+        <textarea placeholder="输入您的留言 *" class="lang-zh" required></textarea>
+        <div class="file-upload">
+          <p class="lang-en">📎 Attach Files Here</p>
+          <p class="lang-zh">📎 在此上传文件</p>
+          <small class="lang-en">Supported: JPG/JPEG/PNG/DOC/DOCX/PDF/XLSX/XLS. Max 10 MB.</small>
+          <small class="lang-zh">支持：JPG/JPEG/PNG/DOC/DOCX/PDF/XLSX/XLS。最大 10 MB。</small>
+        </div>
+        <button type="submit" class="btn btn-primary" style="align-self:flex-start">
+          <span class="lang-en">INQUIRE NOW</span><span class="lang-zh">立即咨询</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <p style="display:flex;align-items:center;gap:12px">
+      <img src="images/general/logo.png" alt="OVINSBO" style="height:24px">
+      © 2026 OVINSBO. <span class="lang-en">All rights reserved.</span><span class="lang-zh">版权所有。</span>
+    </p>
+    <div class="footer-socials">
+      <a href="#" title="Twitter">𝕏</a>
+      <a href="#" title="Facebook">f</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ WhatsApp Float ══ -->
+<a href="https://wa.me/8616888888888" target="_blank" class="whatsapp-float" title="WhatsApp">💬</a>
+
+<!-- ═══════ SCRIPTS ═══════ -->
+<script>
+let currentLang = 'en';
+function toggleLang(){
+  currentLang = currentLang === 'en' ? 'zh' : 'en';
+  document.body.className = currentLang === 'en' ? 'show-en' : 'show-zh';
+  document.getElementById('langToggle').textContent = currentLang === 'en' ? '中文' : 'EN';
+  renderProducts();
+}
+function goHome(){ window.scrollTo({top:0,behavior:'smooth'}); document.getElementById('navLinks').classList.remove('open'); }
+function scrollTo(id){
+  const el = document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth'});
+  document.getElementById('navLinks').classList.remove('open');
+}
+function toggleFaq(el){
+  el.parentElement.classList.toggle('open');
+}
+
+// Mobile nav
+document.getElementById('hamburger').addEventListener('click',()=>{
+  document.getElementById('navLinks').classList.toggle('open');
+});
+
+// Nav scroll effect
+window.addEventListener('scroll',()=>{
+  document.querySelector('nav').classList.toggle('scrolled',window.scrollY>50);
+});
+
+// ── Product Data (10 categories matching our product line) ──
+const products = [
+  { id:1, name_en:'Yoga Wear', name_zh:'瑜伽服', icon:'🧘', desc_en:'Our premium yoga collection includes leggings, tops, and sets. High-stretch, moisture-wicking fabrics for comfort and performance.', desc_zh:'我们的高级瑜伽系列包括裤装、上衣和套装。高弹力、吸湿排汗面料，舒适与性能兼备。' },
+  { id:2, name_en:'Fitness Wear', name_zh:'健身服', icon:'🏋️', desc_en:'Performance gym wear designed for intense workouts. Quick-dry, breathable fabrics with 4-way stretch and compression fit.', desc_zh:'专为高强度训练设计的性能健身服。速干透气面料，四面弹力，压缩贴合。' },
+  { id:3, name_en:'Basketball Uniforms', name_zh:'篮球服', icon:'🏀', desc_en:'Team basketball uniforms with moisture-wicking fabric, reinforced stitching, and customizable designs for schools and clubs.', desc_zh:'团队篮球服，吸湿排汗面料，加固缝线，可定制学校和俱乐部设计。' },
+  { id:4, name_en:'Football Kits', name_zh:'足球套装', icon:'⚽', desc_en:'Professional football kits featuring lightweight, breathable fabric with excellent durability for matches and training.', desc_zh:'专业足球装备套装，轻量透气面料，出色的耐用性，适合比赛和训练。' },
+  { id:5, name_en:'Tennis Wear', name_zh:'网球服', icon:'🎾', desc_en:'Elegant tennis apparel combining style with performance. UPF protection, moisture management, and freedom of movement.', desc_zh:'优雅与性能并重的网球服饰。UPF防晒，湿气管理，运动自如。' },
+  { id:6, name_en:'Ping Pong & Badminton', name_zh:'乒羽服', icon:'🏓', desc_en:'Lightweight and breathable sportswear designed for fast-paced racket sports. Superior comfort and flexibility.', desc_zh:'为快节奏球拍运动设计的轻量透气运动服。卓越的舒适性和灵活性。' },
+  { id:7, name_en:'Sports Shorts', name_zh:'运动短裤', icon:'🩳', desc_en:'Versatile sports shorts for training and casual wear. Available in multiple lengths, colors, and fabric options.', desc_zh:'多功能运动短裤，适合训练和休闲穿着。多种长度、颜色和面料选择。' },
+  { id:8, name_en:'Sports Hoodies', name_zh:'运动卫衣', icon:'🧥', desc_en:'Comfortable hoodies and sweatshirts for pre and post-workout. Soft fleece lining with sporty design details.', desc_zh:'舒适运动卫衣，适合运动前后穿着。柔软的抓绒内里，运动感设计细节。' },
+  { id:9, name_en:'Swimwear', name_zh:'泳装', icon:'🏊', desc_en:'Chlorine-resistant swimwear with UPF 50+ protection. Available in competitive and leisure styles.', desc_zh:'抗氯泳装，UPF 50+ 防晒。提供竞技和休闲款式。' },
+  { id:10, name_en:'Kids Sportswear', name_zh:'儿童运动服', icon:'👶', desc_en:'High-quality sportswear for kids. Durable materials, fun designs, and the same quality standards as our adult range.', desc_zh:'高质量儿童运动服。耐用面料，趣味设计，与成人系列相同的品质标准。' }
+];
+
+function renderProducts(){
+  const grid = document.getElementById('productGrid');
+  grid.innerHTML = products.map(p => `
+    <div class="product-card">
+      <div class="product-placeholder">
+        <div class="icon">${p.icon}</div>
+        <span>${currentLang==='en'?p.name_en:p.name_zh}</span>
+      </div>
+      <div class="product-overlay">
+        <h3>${currentLang==='en'?p.name_en:p.name_zh}</h3>
+        <p>${currentLang==='en'?p.desc_en:p.desc_zh}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+renderProducts();
+</script>
+</body>
+</html>
